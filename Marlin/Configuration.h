@@ -74,10 +74,10 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-#define HotendStock
+//#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
-//#define HotendAllMetal
+#define HotendAllMetal
 
 //Enable this if you have an all metal hotend capable of 300c
 #ifndef HotendAllMetal
@@ -230,7 +230,7 @@
   //#define Dual_CyclopsSingleNozzle
   //#define Dual_ChimeraDualNozzle
 
-//#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
+#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
 
 //Add filtering to endstops when long extensions are used. Makes homing more reliable but less accurate.
 //#define CableExtensionNoiseFilter
