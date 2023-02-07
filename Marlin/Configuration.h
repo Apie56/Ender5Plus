@@ -74,10 +74,9 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-//#define HotendStock
+#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
-#define HotendAllMetal
 
 //Enable this if you have an all metal hotend capable of 300c
 #ifndef HotendAllMetal
@@ -230,7 +229,7 @@
   //#define Dual_CyclopsSingleNozzle
   //#define Dual_ChimeraDualNozzle
 
-#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
+//#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
 
 //Add filtering to endstops when long extensions are used. Makes homing more reliable but less accurate.
 //#define CableExtensionNoiseFilter
@@ -1203,7 +1202,7 @@
   #define TEMP_SENSOR_1 TEMP_SENSOR_0
 #endif
 
-#define TEMP_SENSOR_2 0
+#define TEMP_SENSOR_2 1
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_5 0
@@ -1244,7 +1243,7 @@
 //#define TEMP_SENSOR_1_AS_REDUNDANT
 #define TEMP_SENSOR_REDUNDANT_MAX_DIFF 10
 
-#define TEMP_RESIDENCY_TIME     10  // (seconds) Time to wait for hotend to "settle" in M109
+#define TEMP_RESIDENCY_TIME     6  // (seconds) Time to wait for hotend to "settle" in M109
 #if ENABLED(UnstableTemps)
   #define TEMP_WINDOW              5  // (°C) Temperature proximity for the "temperature reached" timer
   #define TEMP_HYSTERESIS          7  // (°C) Temperature proximity considered "close enough" to the target
@@ -1254,7 +1253,7 @@
 #endif
 
 #define TEMP_BED_RESIDENCY_TIME 5  // (seconds) Time to wait for bed to "settle" in M190
-#define TEMP_BED_WINDOW          1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_BED_WINDOW          2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_BED_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
 
 /**
@@ -1297,12 +1296,12 @@
 	#define HEATER_0_MAXTEMP 315
 #endif
 #define HEATER_1_MAXTEMP 315
-#define HEATER_2_MAXTEMP 315
-#define HEATER_3_MAXTEMP 315
-#define HEATER_4_MAXTEMP 315
-#define HEATER_5_MAXTEMP 315
-#define HEATER_6_MAXTEMP 315
-#define HEATER_7_MAXTEMP 315
+#define HEATER_2_MAXTEMP 275
+#define HEATER_3_MAXTEMP 275
+#define HEATER_4_MAXTEMP 275
+#define HEATER_5_MAXTEMP 275
+#define HEATER_6_MAXTEMP 275
+#define HEATER_7_MAXTEMP 275
 #define BED_MAXTEMP      150
 #define CHAMBER_MAXTEMP  60
 
@@ -1383,9 +1382,9 @@
        #define DEFAULT_Ki   0.81
         #define DEFAULT_Kd 63.12
       #else
-        #define DEFAULT_Kp 17.10
-        #define DEFAULT_Ki 1.39
-        #define DEFAULT_Kd 52.79
+        #define DEFAULT_Kp 17.42
+        #define DEFAULT_Ki 1.27
+        #define DEFAULT_Kd 59.93
       #endif
     #elif ENABLED(HotendE3D)
       //E3D v6 Clone with 5050 fan wing at 100% set to 235
@@ -1494,9 +1493,9 @@
     #define DEFAULT_bedKi 1.17
     #define DEFAULT_bedKd 1349.52
   #else
-    #define DEFAULT_bedKp 10.00
-    #define DEFAULT_bedKi .023
-    #define DEFAULT_bedKd 305.4
+    #define DEFAULT_bedKp 690.34
+    #define DEFAULT_bedKi 111.47
+    #define DEFAULT_bedKd 1068.83
   #endif
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
