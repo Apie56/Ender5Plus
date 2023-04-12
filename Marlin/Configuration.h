@@ -74,7 +74,8 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-#define HotendStock
+#define HotendAllMetal
+//#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
 
@@ -229,7 +230,7 @@
   //#define Dual_CyclopsSingleNozzle
   //#define Dual_ChimeraDualNozzle
 
-//#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
+#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
 
 //Add filtering to endstops when long extensions are used. Makes homing more reliable but less accurate.
 //#define CableExtensionNoiseFilter
@@ -1194,6 +1195,8 @@
   #define TEMP_SENSOR_0 5
 #elif ENABLED(HotendStock)
   #define TEMP_SENSOR_0 1
+#elif ENABLED(HotendAllMetal)
+  #define TEMP_SENSOR_0 1
 #endif
 
 #if DISABLED(Dual_ChimeraDualNozzle)
@@ -1293,7 +1296,7 @@
 #elif ENABLED(HotendAllMetal)
 	#define HEATER_0_MAXTEMP 315
 #else
-	#define HEATER_0_MAXTEMP 315
+	#define HEATER_0_MAXTEMP 275
 #endif
 #define HEATER_1_MAXTEMP 315
 #define HEATER_2_MAXTEMP 275
@@ -1391,6 +1394,10 @@
       #define  DEFAULT_Kp 23.36
       #define  DEFAULT_Ki 1.99
       #define  DEFAULT_Kd 87.46
+    #elif ENABLED(HotendAllMetal)
+      #define  DEFAULT_Kp 14.72
+      #define  DEFAULT_Ki 0.89
+      #define  DEFAULT_Kd 61.22
     #endif
 
     // Ultimaker
