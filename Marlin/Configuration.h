@@ -100,12 +100,12 @@
  //#define E3DHemera
  //#define CrealityTitan
  //#define DDXExtruderKit
- //#define SpriteExtruder
+ #define SpriteExtruder
 
 //Stepper09Deg // 0.9 degree per step motor on the extruder - doubles ESteps
 
  //#define MicroswissDirectDrive
- #define DirectDrive // Any direct drive extruder, reduces filament change lengths
+ //#define DirectDrive // Any direct drive extruder, reduces filament change lengths
 
 /*
    Choose bed type below. If you have an extenrally controlled
@@ -230,7 +230,7 @@
   //#define Dual_CyclopsSingleNozzle
   //#define Dual_ChimeraDualNozzle
 
-#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
+//#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
 
 //Add filtering to endstops when long extensions are used. Makes homing more reliable but less accurate.
 //#define CableExtensionNoiseFilter
@@ -1357,9 +1357,9 @@
         #define DEFAULT_Ki 2.17
         #define DEFAULT_Kd 73.44
       #elif ENABLED(MachineEnder5Plus)
-        #define DEFAULT_Kp 14.72
-        #define DEFAULT_Ki 0.89
-        #define DEFAULT_Kd 61.22
+        #define DEFAULT_Kp 15.33
+        #define DEFAULT_Ki 1.30
+        #define DEFAULT_Kd 45.29
       #elif ENABLED(MachineCRX)
         #define DEFAULT_Kp 19.00
         #define DEFAULT_Ki 1.40
@@ -2761,11 +2761,16 @@
     #if ENABLED(E3DHemera)
       #define X_BED_SIZE 352
       #define X_MAX_POS 352
+    #elif ENABLED(SpriteExtruder)
+      #define Y_BED_SIZE 335
+      #define Y_MAX_POS 335
+      #define X_BED_SIZE 360
+      #define X_MAX_POS 360
     #else
       #define X_BED_SIZE 360
       #define X_MAX_POS 360
+      #define Y_MAX_POS 360
     #endif
-    #define Y_MAX_POS 360
     #define ClipClearance 25
   #elif ENABLED(MachineCR5)
     #define X_BED_SIZE 300
