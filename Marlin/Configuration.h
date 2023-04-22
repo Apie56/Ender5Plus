@@ -74,10 +74,6 @@
    E3D Mounting assumes Groovemount
    Creality Mounting assumes bolt-on kit
 */
-<<<<<<< Updated upstream
-#define HotendAllMetal
-=======
->>>>>>> Stashed changes
 //#define HotendStock
 //#define HotendE3D
 //#define HotendMosquito
@@ -336,7 +332,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "TinyMachines3D" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "3verteD" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1364,20 +1360,6 @@
 //#define TEMP_SENSOR_1_AS_REDUNDANT
 #define TEMP_SENSOR_REDUNDANT_MAX_DIFF 10
 
-<<<<<<< Updated upstream
-#define TEMP_RESIDENCY_TIME     6  // (seconds) Time to wait for hotend to "settle" in M109
-#if ENABLED(UnstableTemps)
-  #define TEMP_WINDOW              5  // (°C) Temperature proximity for the "temperature reached" timer
-  #define TEMP_HYSTERESIS          7  // (°C) Temperature proximity considered "close enough" to the target
-#else
-  #define TEMP_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
-  #define TEMP_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
-#endif
-
-#define TEMP_BED_RESIDENCY_TIME 5  // (seconds) Time to wait for bed to "settle" in M190
-#define TEMP_BED_WINDOW          2  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_BED_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
-=======
 #if HAS_E_TEMP_SENSOR
   #define TEMP_RESIDENCY_TIME     2  // (seconds) Time to wait for hotend to "settle" in M109
   #if ENABLED(UnstableTemps)
@@ -1401,7 +1383,6 @@
   #define TEMP_CHAMBER_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
 #endif
 
->>>>>>> Stashed changes
 
 /**
  * Redundant Temperature Sensor (TEMP_SENSOR_REDUNDANT)
@@ -1439,20 +1420,14 @@
   #define HEATER_0_MAXTEMP 450
 #elif ENABLED(HotendAllMetal)
   #if ENABLED(SpriteExtruder)
-	  #define HEATER_0_MAXTEMP 350
+	  #define HEATER_0_MAXTEMP 320
   #else
     #define HEATER_0_MAXTEMP 315
   #endif
 #else
-<<<<<<< Updated upstream
-	#define HEATER_0_MAXTEMP 275
-#endif
-#define HEATER_1_MAXTEMP 315
-=======
 	#define HEATER_0_MAXTEMP 300
 #endif
 #define HEATER_1_MAXTEMP 275
->>>>>>> Stashed changes
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
@@ -1513,21 +1488,15 @@
         #define DEFAULT_Ki 2.17
         #define DEFAULT_Kd 73.44
       #elif ENABLED(MachineEnder5Plus)
-<<<<<<< Updated upstream
-        #define DEFAULT_Kp 15.33
-        #define DEFAULT_Ki 1.30
-        #define DEFAULT_Kd 45.29
-=======
         #if ENABLED(SpriteExtruder)
-          #define  DEFAULT_Kp 15.3
-          #define  DEFAULT_Ki 1.3
-          #define  DEFAULT_Kd 45.3
+          #define  DEFAULT_Kp 17.41
+          #define  DEFAULT_Ki 1.48
+          #define  DEFAULT_Kd 51.21
         #else
           #define  DEFAULT_Kp 14.72
           #define  DEFAULT_Ki 0.89
           #define  DEFAULT_Kd 61.22
         #endif
->>>>>>> Stashed changes
       #elif ENABLED(MachineCRX)
         #define DEFAULT_Kp 19.00
         #define DEFAULT_Ki 1.40
@@ -1553,25 +1522,15 @@
        #define DEFAULT_Ki   0.81
         #define DEFAULT_Kd 63.12
       #else
-<<<<<<< Updated upstream
         #define DEFAULT_Kp 17.42
         #define DEFAULT_Ki 1.27
         #define DEFAULT_Kd 59.93
-=======
-        #define  DEFAULT_Kp 17.42
-        #define  DEFAULT_Ki 1.27
-        #define  DEFAULT_Kd 59.93
->>>>>>> Stashed changes
       #endif
     #elif ENABLED(HotendE3D)
       //E3D v6 Clone with 5050 fan wing at 100% set to 235
       #define  DEFAULT_Kp 23.36
       #define  DEFAULT_Ki 1.99
       #define  DEFAULT_Kd 87.46
-    #elif ENABLED(HotendAllMetal)
-      #define  DEFAULT_Kp 14.72
-      #define  DEFAULT_Ki 0.89
-      #define  DEFAULT_Kd 61.22
     #endif
 
     // Ultimaker
@@ -1680,15 +1639,9 @@
     #define DEFAULT_bedKi 1.17
     #define DEFAULT_bedKd 1349.52
   #else
-<<<<<<< Updated upstream
     #define DEFAULT_bedKp 690.34
     #define DEFAULT_bedKi 111.47
     #define DEFAULT_bedKd 1068.83
-=======
-    #define  DEFAULT_bedKp 690.34
-    #define  DEFAULT_bedKi 111.47
-    #define  DEFAULT_bedKd 1068.83
->>>>>>> Stashed changes
   #endif
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
@@ -2200,7 +2153,7 @@
 #elif ENABLED(E3DHemera)
   #define EStepsmm 409
 #elif ENABLED(SpriteExtruder)
-  #define EStepsmm 430
+  #define EStepsmm 417.51   // default = 430
 #elif ANY(EZRstruder, MachineCR10SV2)
   #define EStepsmm 93
 #elif ENABLED(MachineCR5)
@@ -2670,7 +2623,7 @@
   #define NOZZLE_TO_PROBE_OFFSET { -30, -40, -1.0 }
 #elif (ENABLED(ABL_BLTOUCH) && ENABLED(HotendStock))
   #if ENABLED(SpriteExtruder)
-    #define NOZZLE_TO_PROBE_OFFSET { -28, -45, 0 }
+    #define NOZZLE_TO_PROBE_OFFSET { -28, -45, -2.5}
   #else
     #define NOZZLE_TO_PROBE_OFFSET { -41, -8, 0 }
   #endif
@@ -2696,7 +2649,7 @@
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #if ENABLED(ABL_BLTOUCH)
-  #define PROBING_MARGIN 3
+  #define PROBING_MARGIN 5
 #else
   #define PROBING_MARGIN 10
 #endif
@@ -3080,24 +3033,6 @@
     #define Y_MAX_POS 225
     #define ClipClearance 15
   #elif ENABLED(MachineEnder5Plus)
-<<<<<<< Updated upstream
-    #define Y_BED_SIZE 360
-    #define Z_MAX_POS 400
-    #if ENABLED(E3DHemera)
-      #define X_BED_SIZE 352
-      #define X_MAX_POS 352
-    #elif ENABLED(SpriteExtruder)
-      #define Y_BED_SIZE 335
-      #define Y_MAX_POS 335
-      #define X_BED_SIZE 360
-      #define X_MAX_POS 360
-    #else
-      #define X_BED_SIZE 360
-      #define X_MAX_POS 360
-      #define Y_MAX_POS 360
-    #endif
-    #define ClipClearance 25
-=======
     #if ENABLED(SpriteExtruder)
       #define Y_BED_SIZE 350
       #define Z_MAX_POS 400
@@ -3118,7 +3053,6 @@
       #define Y_MAX_POS 360
       #define ClipClearance 25
     #endif
->>>>>>> Stashed changes
   #elif ENABLED(MachineCR5)
     #define X_BED_SIZE 300
     #define Y_BED_SIZE 225

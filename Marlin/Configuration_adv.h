@@ -300,13 +300,8 @@
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-<<<<<<< Updated upstream
-  #define THERMAL_PROTECTION_PERIOD 50        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 7     // Degrees Celsius
-=======
   #define THERMAL_PROTECTION_PERIOD 60        // Seconds
   #define THERMAL_PROTECTION_HYSTERESIS 10     // Degrees Celsius
->>>>>>> Stashed changes
 
   #if DISABLED(MachineCR10Orig) || ENABLED(MelziHostOnly)
     #define ADAPTIVE_FAN_SLOWING              // Slow part cooling fan if temperature drops
@@ -327,11 +322,7 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-<<<<<<< Updated upstream
-  #define WATCH_TEMP_PERIOD 45                // Seconds
-=======
   #define WATCH_TEMP_PERIOD 60                // Seconds
->>>>>>> Stashed changes
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -348,17 +339,10 @@
     #define WATCH_BED_TEMP_INCREASE 4               // Degrees Celsius
 
   #else
-<<<<<<< Updated upstream
-    #define THERMAL_PROTECTION_BED_PERIOD 85    // Seconds
-    #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
-
-    #define WATCH_BED_TEMP_PERIOD 150                // Seconds
-=======
     #define THERMAL_PROTECTION_BED_PERIOD 50    // Seconds
     #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
 
     #define WATCH_BED_TEMP_PERIOD 180                // Seconds
->>>>>>> Stashed changes
     #define WATCH_BED_TEMP_INCREASE 2               // Degrees Celsius
   #endif
 #else
