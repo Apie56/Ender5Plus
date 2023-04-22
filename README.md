@@ -1,7 +1,6 @@
 # Ender5Plus
 A repository for all programming adventures with the Creality Ender 5 Plus 3D printer with the following:
-- MicroSwiss All-Metal Hotend
-- BMG clone Direct-Drive extruder
+- Creality High Temperature Sprite Hotend Assembly
 - BTT SKR V1.4
 - TMC2209 UART drivers
 - bltouch (BI)
