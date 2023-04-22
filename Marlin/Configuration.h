@@ -230,7 +230,7 @@
   //#define Dual_CyclopsSingleNozzle
   //#define Dual_ChimeraDualNozzle
 
-//#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
+#define POWER_LOSS_RECOVERY //Large and does not fit with any other features on Melzi, or UBL on Atmega
 
 //Add filtering to endstops when long extensions are used. Makes homing more reliable but less accurate.
 //#define CableExtensionNoiseFilter
@@ -1294,7 +1294,11 @@
 #if ENABLED(HotendMosquito)
   #define HEATER_0_MAXTEMP 450
 #elif ENABLED(HotendAllMetal)
-	#define HEATER_0_MAXTEMP 315
+  #if ENABLED(SpriteExtruder)
+	  #define HEATER_0_MAXTEMP 350
+  #else
+    #define HEATER_0_MAXTEMP 315
+  #endif
 #else
 	#define HEATER_0_MAXTEMP 275
 #endif
