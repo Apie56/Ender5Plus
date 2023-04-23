@@ -1299,9 +1299,9 @@
   #define TEMP_SENSOR_0 67
 #elif ENABLED(HotendE3D)
   #define TEMP_SENSOR_0 5
-#elif ENABLED(HotendStock)
-  #define TEMP_SENSOR_0 1
 #elif ENABLED(HotendAllMetal)
+  #define TEMP_SENSOR_0 61
+#elif ENABLED(HotendStock)
   #define TEMP_SENSOR_0 1
 #endif
 
@@ -1420,7 +1420,7 @@
   #define HEATER_0_MAXTEMP 450
 #elif ENABLED(HotendAllMetal)
   #if ENABLED(SpriteExtruder)
-	  #define HEATER_0_MAXTEMP 320
+	  #define HEATER_0_MAXTEMP 350
   #else
     #define HEATER_0_MAXTEMP 315
   #endif
