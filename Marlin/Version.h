@@ -163,7 +163,7 @@
 #elif(ENABLED(MachineEnder5))
   #define CUSTOM_MACHINE_NAME "TM3D Ender5"
 #elif(ENABLED(MachineEnder5Plus))
-  #define CUSTOM_MACHINE_NAME "TM3D E5 Plus"
+  #define CUSTOM_MACHINE_NAME "XYZ"
 #elif(ENABLED(MachineCR20))
   #define CUSTOM_MACHINE_NAME "SuPeR CR-20"
 #elif(ENABLED(MachineCR10Orig))
