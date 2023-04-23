@@ -171,3 +171,6 @@ __pycache__
 # IOLogger logs
 *_log.csv
 .vscode/extensions.json
+buildroot/share/PlatformIO/scripts/__pycache__/pioutil.cpython-39.pyc
+buildroot/share/PlatformIO/scripts/__pycache__/preprocessor.cpython-39.pyc
+buildroot/share/PlatformIO/scripts/__pycache__/signature.cpython-39.pyc
