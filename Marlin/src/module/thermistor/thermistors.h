@@ -212,7 +212,7 @@ typedef struct { raw_adc_t value; celsius_t celsius; } temp_entry_t;
   constexpr temp_entry_t temptable_1000[] PROGMEM = { { 0, 0 } };
 #endif
 
-#define _TT_NAME(_N) temptable_ ## _N
+#define _TT_NAME(_N) temptable_61
 #define TT_NAME(_N) _TT_NAME(_N)
 
 #if TEMP_SENSOR_0 > 0
